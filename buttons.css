@@ -1,0 +1,140 @@
+.grid {
+    border: 2px solid black;
+    width: 33%;
+    
+}
+
+button {
+  border: 5px solid transparent;
+  background: #AED6D1;
+  color: #55706D;
+  border-radius: 40px;
+  padding: 15px 30px;
+  overflow: hidden;
+  width: 200px;
+  transition: 
+    all        2.2s,
+    border     2.5s 1.2s,
+    box-shadow 2.3s 1.5s;
+  white-space: nowrap;
+  text-indent: 23px;
+  font-weight: bold;
+}
+
+button span {
+    display: inline-block;
+    transform: translateX(300px);
+    font-weight: normal;
+    opacity: 0;
+    transition: 
+      opacity 0.1s 0.5s,
+      transform 0.4s 0.5s;
+  }
+
+button:hover {
+    text-indent: 0;
+    background: #55706D;
+    color: #FFE8A3;
+    width: 250px;
+    border: 10px solid #8DCCC4;
+    box-shadow: 3px 3px 2px rgba(black, 0.15);    
+  }
+
+button:hover span {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+button2 {
+  border: 2px solid #55706D;
+  background: #AED6D1;
+  color: #55706D;
+  border-radius: 40px;
+  padding: 15px 30px;
+  overflow: hidden;
+  width: 100px;
+  box-shadow: 3px 3px 2px rgba(black, 0.8);
+  white-space: nowrap;
+  text-indent: 23px;
+  font-weight: bold;
+}
+
+button2:hover {
+     animation: pulse 2.2s infinite;
+  }
+
+@keyframes pulse {
+	50% { 
+        background: #55706D;
+        color: #FFE8A3;
+        border: 2px solid #8DCCC4;
+        box-shadow: 3px 3px 2px rgba(black, 0.35);         
+        font-size: 1.1em;
+    }
+}
+/* button 3 */
+.button3 {
+    display:block;
+    width: 100px;
+    height: 100px;
+    text-align:center;
+    position:relative;
+    color: #55706D;
+    background: yellow;
+    box-shadow: 3px 3px 2px rgba(black, 0.8);
+    transition: transform 1.3s ease;
+    transform: rotate(-90deg);
+}
+
+.button3 span {
+    background: yellow;
+    width: 100px;
+    height: 100px;
+	display:block;
+	transform: rotate(22.5deg);
+}
+
+.button3:hover, .button3:hover span {
+    animation: spin 1.2s forwards;    
+}
+
+@keyframes spin {
+	100% { 
+        transform: rotate(-360deg);
+        display: inline;
+    }
+}
+/* button 4 */
+.button4 {
+    display:inline;
+    width: 100px;
+    height: 100px;
+    text-align:center;
+    position:relative;
+    color: #55706D;
+    background: yellow;
+    box-shadow: 3px 3px 2px rgba(black, 0.8);
+    transition: transform 1.3s ease;
+    transform: rotate(-90deg);
+}
+
+.button4 span {
+    background: yellow;
+    width: 100px;
+    height: 100px;
+	display:block;
+	transform: rotate(22.5deg);
+}
+
+.button4:hover, .button4:hover span {
+    animation: spin 1.2s forwards;    
+}
+
+@keyframes spin {
+	100% { 
+        transform: rotate(-360deg);
+        display: inline;
+    }
+}
+
+

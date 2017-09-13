@@ -1,0 +1,134 @@
+body {
+    background: #D0E2E4;
+}
+
+.scoreboard {
+    color: black;
+    align-items: center;
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+.info {
+    position: relative;
+    height: 50px;
+    background: grey;
+    border-radius: 50% 0px  0px 50%; /* tl, tr, br ,bl */
+    border: 2px solid red;
+    align-items: center;
+    border-radius: 25px 25px 25px 25px; 
+    padding: 10px;
+    width: 75%;
+    display: flex;
+    justify-content: center;    
+    background: -moz-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(154,203,230,1)), color-stop(100%, rgba(255,255,255,0.15))); /* safari4+,chrome */
+    background:-webkit-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* opera 11.10+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* ie10+ */
+    background:radial-gradient(ellipse at center, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ACBE6', endColorstr='#ffffff',GradientType=0 ); /* ie6-9 */
+}
+
+.score {
+    height: 60px;
+    
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+    display: inline-block;
+    background: transparent;
+    animation: fadeInScore 1.2s 1.2s forwards;
+    /*width: 20%;*/
+    color: transparent;
+}
+
+.hometeam, .awayteam {
+    position: relative;
+    padding: 10px;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+} 
+
+.hometeam {
+    animation: fadeInRight 2.2s forwards;
+} 
+
+ .awayteam {
+    animation: fadeInLeft 2.2s forwards;
+} 
+
+.crest {
+    opacity: 0;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 10px;
+    animation: fadeIn  4.2s forwards;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100&1+0,0+100;Blue+to+Transparent */
+    background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@keyframes fadeIn {
+    
+    0% {
+        opacity: 0;
+    }   
+    70% { transform: scale(1); opacity: 1; }
+    85% { transform: scale(2.4); }
+    100% { transform: scale(1); opacity: 1; }   
+}
+
+@keyframes fadeInScore {
+   0% {
+      opacity: 0;
+      color: transparent;
+   }
+   50% { 
+       opacity: 0;
+       color: transparent;
+       }
+   100% {
+      opacity: 1;
+      color: black;
+      background: yellow;
+      border: 2px solid red;
+   }
+}
+
+@keyframes fadeInLeft {
+   from {
+               margin-left:100%;
+               /*width:300%*/
+            }
+            50% {
+               font-size:400%;
+               margin-left:-5%;
+               /*width:130%;*/
+            }
+            to {
+               margin-left:0%;
+               width:40%;
+            }
+}
+
+@keyframes fadeInRight {
+   from {
+               margin-right:100%;
+               /*width:300%*/
+            }
+            50% {
+               font-size:400%;
+               margin-left:-5%;
+               /*width:150%;*/
+            }
+            to {
+               margin-right:0%;
+               width:40%;
+            }
+}
+

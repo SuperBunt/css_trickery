@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+
+<head>
+    <title>Reveal</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Button effects" />
+    <meta name="keywords" content="Buttons, transitions" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="reveal.css" media="screen" />
+    <!--<script type="text/javascript" src="reveal.js"></script>-->
+
+</head>
+
+<body>
+    <div id="view"></div>
+</body>
+<script>
+    var mousePosition;
+    var div;
+    var isDown = false;
+    div = document.getElementById("view");
+
+    div.addEventListener('mousedown', function (e) {
+        isDown = true;
+    }, true);
+    document.addEventListener('mouseup', function () {
+        isDown = false;
+    }, true);
+    document.addEventListener('mousemove', function (event) {
+        event.preventDefault();
+        if (isDown) {
+            mousePosition = { x: event.clientX, y: event.clientY };
+            div.style.clip = "rect(" + (mousePosition.y - 150) + "px, " + (mousePosition.x + 230) + "px, " + (mousePosition.y + 150) + "px, " + (mousePosition.x - 230) + "px )";
+            // div.style.clip = "circle(50px at " + (mousePosition.x /10) + "px " + (mousePosition.y /10) +"px )";
+            console.log(mousePosition.x , mousePosition.y)
+    }
+    }, true);
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+body {
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+background: url('exterior.jpg') no-repeat center center fixed;
+background-size: contain;
+}
+/* the clip property only works on elements with position: absolute or position: fixed. It won’t work with relative or static positioning. */
+#view {
+position: absolute;
+left: 0; top: 0;
+width: 100%;
+height: 100%;
+background: red;
+background: url('interior.jpg') no-repeat center center fixed;
+background-size: contain;
+clip: rect(0px, 300px, 200px, 0px);
+/* clip-path: circle(3% at 50% 50%); */
+}

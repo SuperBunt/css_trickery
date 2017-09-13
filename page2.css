@@ -1,0 +1,16 @@
+.parent {
+  position: relative;
+}
+
+.line {
+	width: 300px;
+  height: 100px;
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: red;
+
+  margin: -70px 0 0 -170px;
+}
