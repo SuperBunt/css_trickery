@@ -1,0 +1,21 @@
+.fighter{
+    
+    position: absolute;
+    /*left: 10%;*/
+    top: 30%;
+    background-color: transparent;
+    opacity: 0;
+    animation: fly_out 4s linear;
+    
+}
+
+@keyframes fly_out {  
+  0% {
+        opacity: 0;
+    }   
+    25% { transform: scale(1.2) translateX(125%); opacity: 1;  }
+    50% { transform: scale(2.5) translateX(250%); opacity: 1;  }
+
+    75% { transform: scale(3.4) translateY(65%) translateX(375%) ; }
+    100% { transform: scale(8.2) translateY(135%) translateX(500%) ; opacity: 1; }   
+}

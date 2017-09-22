@@ -8,6 +8,11 @@ body {
     display: flex;
     margin: 10px;
     justify-content: center;
+    border: 1px dashed red;
+}
+
+.scoreboard li{
+    list-style-type: none;
 }
 
 .info {
@@ -32,8 +37,7 @@ body {
 }
 
 .score {
-    height: 60px;
-    
+    height: 60px;    
     text-align: center;
     padding: 15px;
     font-size: 1.2em;
@@ -65,21 +69,39 @@ body {
     border-radius: 50%;
     border: 2px solid black;
     padding: 10px;
-    animation: fadeIn  4.2s forwards;
+    animation: fadeIn 3s forwards;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100&1+0,0+100;Blue+to+Transparent */
     background: -moz-linear-gradient(-45deg, rgba(30,87,153,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    z-index: 1;
 }
 
-@keyframes fadeIn {
+.home {
+    animation: crestHome 3s forwards;
+}
+
+.away {
+    animation: crestAway 3s forwards;
+}
+
+@keyframes crestHome {
     
     0% {
         opacity: 0;
     }   
     70% { transform: scale(1); opacity: 1; }
-    85% { transform: scale(2.4); }
+    85% { transform: scale(3.4) translateY(35%) translateX(25%) rotate(30deg); }
+    100% { transform: scale(1); opacity: 1; }   
+}
+
+@keyframes crestAway {    
+    0% {
+        opacity: 0;
+    }   
+    70% { transform: scale(1); opacity: 1; }
+    85% { transform: scale(3.4) translateY(35%) translateX(-25%) rotate(-30deg); }
     100% { transform: scale(1); opacity: 1; }   
 }
 
@@ -130,5 +152,50 @@ body {
                margin-right:0%;
                width:40%;
             }
+}
+
+/* STASTISTICS */
+.circle {
+    position: absolute;
+    min-height: 80px;
+    min-width: 80px;
+    border-radius: 50%;
+    border: 2px groove green;
+    text-align: center;
+    
+}
+
+.stat_bar{
+    opacity: 0;
+    /*width: 40%;
+    position: relative;
+    text-align: center;
+    border: 1px dashed green;*/
+    position: relative;
+    height: 50px;
+    background: grey;
+    border-radius: 50% 0px  0px 50%; /* tl, tr, br ,bl */
+    border: 2px solid red;
+    align-items: center;
+    border-radius: 25px 25px 25px 25px; 
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    justify-content: center;    
+    background: -moz-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(154,203,230,1)), color-stop(100%, rgba(255,255,255,0.15))); /* safari4+,chrome */
+    background:-webkit-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* opera 11.10+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* ie10+ */
+    background:radial-gradient(ellipse at center, rgba(154,203,230,1) 0%, rgba(255,255,255,0.15) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ACBE6', endColorstr='#ffffff',GradientType=0 ); /* ie6-9 */
+}
+
+.left{
+    left: -80px;
+}
+
+.right{
+    right: -80px;
 }
 
