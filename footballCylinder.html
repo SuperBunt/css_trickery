@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="wrap images around CSS3 3D cube " />
+    <meta name="author" content="Peter Connell" />
+
+    <title>Wrap crest around cylinder using Pure CSS3 3D</title>
+
+    <style type="text/css" media="screen">
+        h1 {
+            color: black;
+        }
+        /*--- Container for cube animation ---*/
+
+        #viewStage {
+            -webkit-perspective: 600px;
+            -webkit-perspective-origin: 50% 50%;
+            animation: disappear 3s 6s forwards;
+        }
+
+        @keyframes disappear {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        /*--- Cube Style ---*/
+
+        .cube {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+
+            /* 3D Transforms attributes */
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 50% 50%;
+
+            /* Cube Animation attributes */
+            -webkit-animation-name: rotateAndScale;
+            -webkit-animation-timing-function: ease-out;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 9s;
+        }
+        /*-- Keyframes --*/
+
+        @-webkit-keyframes rotation {
+            40% {
+                -webkit-transform: rotateY(-180deg);
+            }
+            50% {
+                -webkit-transform: rotateY(-180deg);
+            }
+            80% {
+                -webkit-transform: rotateY(-360deg);
+            }
+            100% {
+                -webkit-transform: rotateY(-360deg);
+            }
+        }
+
+        @-webkit-keyframes rotateAndScale {
+            10% {
+                -webkit-transform: rotateY(-180deg);
+            }
+            15% {
+                -webkit-transform: rotateY(-180deg);
+            }
+            20% {
+                -webkit-transform: rotateY(-360deg);
+            }
+            30% {
+                -webkit-transform: rotateY(-360deg);
+            }
+            100% {
+                -webkit-transform: rotateY(-2960deg);
+            }
+        }
+        /* Each cube's face share same attributes */
+
+        .cube div {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            opacity: .95;
+            -webkit-transform-origin: 50% 50%;
+            /*backface-visibility: hidden;*/
+        }
+        /*--- Cube faces color ---*/
+
+        .facefront {
+            background-color: transparent;
+            -webkit-transform: translateZ(150px);
+            background-image: url("images/football/Liverpool_FC.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .faceback {
+            background-color: transparent;
+            -webkit-transform: rotateX(180deg) rotateZ(180deg) translateZ(150px);
+            background-image: url("images/football/Chelsea_FC.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        /*.facetop {
+            background-color: green;
+            -webkit-transform: rotateX(90deg) translateZ(150px);
+        }
+
+        .facebottom {
+            background-color: purple;
+            -webkit-transform: rotateX(-90deg) translateZ(150px);
+        } */
+
+        .faceleft {
+            align-content: center;
+            -webkit-transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .faceright {
+            align-content: center;
+            -webkit-transform: rotateY(-90deg) translateZ(150px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h1>Images Wrapped Around A Spinning cube</h1>
+
+        <div id="viewStage">
+            <div class="cube">
+                <div class="facefront"></div>
+                <div class="faceback"></div>
+                <div class="faceleft">
+                    <h1>Liverpool</h1>
+                </div>
+                <div class="faceright">
+                    <h1>Chelsea</h1>
+                </div>
+                <div class="facetop"></div>
+                <div class="facebottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
